@@ -1,0 +1,44 @@
+.main-section-hero {
+  height: 100vh;
+  background: linear-gradient(
+      to bottom,
+      rgba(16, 153, 255, 0.9),
+      rgba(179, 206, 255, 0.9)
+    ),
+    url(../../assets/section.jpg);
+  background-position: center;
+  object-fit: contain;
+}
+
+.main-div-hero{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.main-div-hero h1{
+ font-size: 42px;
+font-weight: 700;
+font-style: italic;
+text-align: center;
+}
+
+
+.main-div-hero p{
+    font-size: 18px;
+   font-weight: 500;
+   font-style: italic;
+   text-align: center;
+   max-width: 50%;
+   }
+
+
+
+   @media screen and (max-width: 600px) {
+    .main-div-hero p{
+       max-width: 90%;
+       }
+  }
