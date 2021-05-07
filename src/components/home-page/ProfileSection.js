@@ -1,15 +1,15 @@
 import React, { useState, useContext, useEffect } from "react";
 import { DataContextApi } from "../global-components/ContextApi";
 import ProfileCard from "./ProfileCard";
-import { Button, Space, Input } from "antd";
 import Container from "../global-components/Container";
-import { HiOutlineSearch, HiOutlineX } from "react-icons/hi";
+import SearchProfile from "./SearchhProfile";
+import LoadReset from "./LoadReset";
 
 const ProfileSection = () => {
   const { profileData, imageurl } = useContext(DataContextApi);
   const [data, setData] = useState([]);
   const [sliceValue, setSliceValue] = useState(9);
-  const [input, setInput] = useState("");
+
   useEffect(() => {
     setData(profileData);
   }, [profileData]);
@@ -32,6 +32,7 @@ const ProfileSection = () => {
         lastname={data.professional.last_name}
         email={data.professional.email}
         details={data.address}
+        slug={data.slug}
       />
     );
   });
@@ -39,63 +40,20 @@ const ProfileSection = () => {
   return (
     <section className="section-card">
       <Container>
-        <div className='section-title' >
+        <div className="section-title">
           <h1 className="section-card-h1"> List of Profile's </h1>
-          <span className='section-span-search'>
-            <Space>
-              <Input
-              placeholder='Search Profile by first-name'
-              size='middle'
-                onChange={(e) => {
-                  setInput(e.target.value);
-                }}   />
-              <Button
-              type='primary'
-                onClick={() => {
-                  handleSearch(input);
-                }} >
-                <HiOutlineSearch />
-              </Button> 
-              <Button
-              type='primary'
-              danger
-                onClick={() => {
-                  setData(profileData)
-                  setSliceValue(9)
-                }} >
-                <HiOutlineX />
-              </Button>
-            </Space>
+          <span className="section-span-search">
+            <SearchProfile
+              handleSearch={handleSearch}
+              profileData={profileData}
+              setData={setData}
+              setSliceValue={setSliceValue}
+            />
           </span>
         </div>
         <div className="row">{cardComponents}</div>
       </Container>
-      <div className="button-div">
-        <Space size="large">
-          <Button
-            type="primary"
-            shape="round"
-            size="large"
-            onClick={() => {
-              setSliceValue(sliceValue + 9);
-            }}
-          >
-            Load More
-          </Button>
-          <Button
-            type="primary"
-            shape="round"
-            danger
-            size="large"
-            disabled={sliceValue === 9 ? true : false}
-            onClick={() => {
-              setSliceValue(9);
-            }}
-          >
-            Reset
-          </Button>
-        </Space>
-      </div>
+      <LoadReset setSliceValue={setSliceValue} sliceValue={sliceValue} />
     </section>
   );
 };
