@@ -1,6 +1,6 @@
 import React from 'react'
-import ContextApi from './contextapi/ContextApi'
-import Router from './route/Router'
+import ContextApi from './components/global-components/ContextApi'
+import Router from './components/global-components/Router'
 
 const App = () => {
   return (

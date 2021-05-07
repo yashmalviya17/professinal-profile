@@ -1,8 +1,8 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import ErrorPage from "../components/global-components/ErrorPage";
-import HomePage from "../components/home-page/HomePage";
-import SingleProfile from "../components/single-profile/SingleProfile";
+import ErrorPage from "./ErrorPage";
+import HomePage from "../home-page/HomePage";
+import SingleProfile from "../single-profile/SingleProfile";
 const Router = () => {
   return (
     <div>
