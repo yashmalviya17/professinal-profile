@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo.png";
-import { HiMenu } from "react-icons/hi";
+import { HiOutlineHome } from "react-icons/hi";
+import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const [colorChange, setColorchange] = useState(false);
 
   const changeNavbarColor = () => {
     const innerHeight = window.innerHeight;
-    const path = window.location.pathname;
+    // const path = window.location.pathname;
     if (window.scrollY >= innerHeight) {
       setColorchange(true);
     } else {
@@ -21,9 +22,12 @@ const Navbar = () => {
       <span>
         <img src={logo} alt="p-logo" />
       </span>
-      <span style={{ float: "right", padding: "5px 20px" }}>
-        <HiMenu size="3rem" />
-      </span>
+      <NavLink
+        to="/"
+        style={{ float: "right", padding: "5px 20px", color: "#332B2B" }}
+      >
+        <HiOutlineHome size="3rem" />
+      </NavLink>
     </div>
   );
 };
