@@ -1,3 +1,9 @@
+/* Css for First Section */
+
+html,
+body {
+  box-sizing: border-box;
+}
 .main-section-hero {
   height: 100vh;
   background: linear-gradient(
@@ -10,35 +16,139 @@
   object-fit: contain;
 }
 
-.main-div-hero{
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
+.main-div-hero {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.main-div-hero h1{
- font-size: 42px;
-font-weight: 700;
-font-style: italic;
-text-align: center;
+.main-div-hero h1 {
+  font-size: 42px;
+  font-weight: 700;
+  font-style: italic;
+  text-align: center;
 }
 
+.main-div-hero p {
+  font-size: 18px;
+  font-weight: 500;
+  font-style: italic;
+  text-align: center;
+  max-width: 50%;
+}
 
-.main-div-hero p{
-    font-size: 18px;
-   font-weight: 500;
-   font-style: italic;
-   text-align: center;
-   max-width: 50%;
-   }
+.main-div-hero button {
+  font-size: 18px;
+  padding: 10px 24px;
+  border-radius: 25px;
+  border: none;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
 
+.main-div-hero button:hover {
+  background: #1890ff;
+  border: 1px solid rgb(16, 153, 255);
+  color: white;
+}
 
-
-   @media screen and (max-width: 600px) {
-    .main-div-hero p{
-       max-width: 90%;
-       }
+@media screen and (max-width: 600px) {
+  .main-div-hero p {
+    max-width: 90%;
   }
+}
+
+/* Css for ProfileCard */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.col-md-4 {
+  margin-bottom: 30px;
+  padding: 0px 7px;
+  width: 400px;
+}
+
+.card {
+  border: solid 1px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  padding: 20px;
+}
+.card:hover {
+  box-shadow: 0 0 12px 3px rgba(0, 0, 0, 0.08);
+}
+.card-title {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+}
+.card-text {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-text .fa {
+  font-size: 26px;
+}
+.avatar {
+  width: 140px;
+  margin: auto;
+}
+.avatar img {
+  border: solid 6px transparent;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
+.card:hover .avatar img {
+  border-color: #1890ff;
+}
+
+.phone {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.button-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px;
+}
+
+.section-card{
+    margin: 60px 0px 60px 0px;
+}
+
+.section-card h1{
+    font-size: 32px;
+    font-weight: 600;
+    margin: 60px 0px;
+    display: inline-block;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1040px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    margin: auto;
+    max-width: 350px;
+  }
+}
