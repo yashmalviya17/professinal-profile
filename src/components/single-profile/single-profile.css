@@ -1,5 +1,5 @@
 .main-sp{
-    margin-top: 60px;
+    margin-top: 80px;
     height: 100vh;
 }
 
@@ -16,8 +16,15 @@
 
 .main-sp p span{
     font-weight: bold;
+    text-transform: capitalize;
 }
 
 .sp-detail{
   padding-top: 10%;
+}
+
+@media (min-width: 1200px){
+    .sp-basic{
+       padding: 40px;
+    }
 }

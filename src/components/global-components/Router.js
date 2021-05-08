@@ -4,6 +4,7 @@ import ErrorPage from "./ErrorPage";
 import HomePage from "../home-page/HomePage";
 import SingleProfile from "../single-profile/SingleProfile";
 import Navbar from "./Navbar";
+import Footer from './Footer'
 const Router = () => {
   return (
     <div>
@@ -13,6 +14,7 @@ const Router = () => {
         <Route exact path="/profile/:name/:slug" component={SingleProfile} />
         <Route component={ErrorPage} />
       </Switch>
+      <Footer/>
     </div>
   );
 };
