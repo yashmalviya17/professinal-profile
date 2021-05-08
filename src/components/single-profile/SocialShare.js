@@ -8,7 +8,8 @@ import { Space } from "antd";
 import { RiFacebookFill, RiLinkedinFill, RiTwitterFill } from "react-icons/ri";
 const SocialShare = (props) => {
   return (
-    <Space size="large">
+    <Space size="large"> 
+     <p> Share Profile : </p>
       <FacebookShareButton
         url={`${props.imageurl}`}
         quote={`My name is ${props.name} DESCRIPTION: ${props.description}`}
