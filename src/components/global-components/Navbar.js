@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import { HiOutlineHome } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
@@ -7,13 +7,21 @@ const Navbar = () => {
 
   const changeNavbarColor = () => {
     const innerHeight = window.innerHeight;
-    // const path = window.location.pathname;
-    if (window.scrollY >= innerHeight) {
+    const path = window.location.pathname;
+    if (window.scrollY >= innerHeight && path === "/") {
       setColorchange(true);
-    } else {
-      setColorchange(false);
+      return false
+    } 
+    if(path !== '/'){
+        setColorchange(true)
+        return false
     }
+    setColorchange(false)
   };
+
+  useEffect(()=>{
+      changeNavbarColor()
+  },[])
 
   window.addEventListener("scroll", changeNavbarColor);
 

@@ -10,7 +10,7 @@ const Router = () => {
       <Navbar/>
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/profile/:name/q?=:slug" component={SingleProfile} />
+        <Route exact path="/profile/:name/:slug" component={SingleProfile} />
         <Route component={ErrorPage} />
       </Switch>
     </div>

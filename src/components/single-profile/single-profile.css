@@ -1,0 +1,23 @@
+.main-sp{
+    margin-top: 60px;
+    height: 100vh;
+}
+
+.main-sp h1{
+    font-size: 42px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.main-sp p{
+    margin: 10px;
+    font-size: 24px;
+}
+
+.main-sp p span{
+    font-weight: bold;
+}
+
+.sp-detail{
+  padding-top: 10%;
+}

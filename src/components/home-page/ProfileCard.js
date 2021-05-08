@@ -11,7 +11,7 @@ const ProfileCard = ({
 }) => {
   return (
     <Tooltip title="Click to Open Profile">
-      <Link to={`/profile/${firstname}/q?=${slug}`} >
+      <Link to={`/profile/${firstname}/${slug}`} >
         <div className="col-md-4 animated fadeIn">
           <div className="card">
             <div className="card-body">

@@ -1,4 +1,4 @@
-/* Css for First Section */
+/* Css for FirstSection.js */
 
 html,
 body {
@@ -60,7 +60,8 @@ body {
   }
 }
 
-/* Css for ProfileCard */
+
+/* Css for ProfileSection.js & ProfileCard.js */
 
 .row {
   display: flex;
@@ -71,7 +72,6 @@ body {
 
 .col-md-4 {
   margin-bottom: 30px;
-  padding: 0px 7px;
   width: 400px;
 }
 
@@ -157,9 +157,13 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+  .col-md-4 {
+    margin-bottom: 30px;
+    width: 300px;
+  }
   .card {
     margin: auto;
-    max-width: 350px;
+    max-width: 320px;
   }
   .row {
     justify-content: space-around;

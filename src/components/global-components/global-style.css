@@ -1,5 +1,11 @@
 .container-div{
-    margin: 0px 16%;
+    margin: 0px 10%;
+}
+
+@media (min-width: 1200px){
+    .container-div{
+        margin: 0px 20%;
+    }
 }
 
 .navbar{
@@ -34,4 +40,15 @@
     width: 48px;
     height: 48px;
     margin: 5px 20px;
+}
+
+
+/* CSS for error-page  */
+
+
+.error-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
