@@ -1,28 +1,42 @@
 import React from "react";
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  LinkedinShareButton,
+} from "react-share";
+import { Space } from "antd";
 import { RiFacebookFill, RiLinkedinFill, RiTwitterFill } from "react-icons/ri";
-import { Space, Tooltip } from "antd";
 const SocialShare = (props) => {
   return (
-    <div style={{ margin: "10px auto"}}>
-      <Space size="large"> 
-      <p> Share Profile : </p>
-        <Tooltip placement="bottom" title="Click to Share on Facebook">
-          <RiFacebookFill size="2.5rem" onClick={()=>{
-              window.open(props.facebook,'_blank')
-          }} color="#3b5998" />
-        </Tooltip>
-        <Tooltip placement="bottom" title="Click to Share on LinkedIn ">
-          <RiLinkedinFill size="2.5rem" color="#00a0dc" onClick={()=>{
-              window.open(props.linkedin,'_blank')
-          }} />
-        </Tooltip>
-        <Tooltip placement="bottom" title="Click to Share on Twitter ">
-          <RiTwitterFill size="2.5rem" color="#1da1f2" onClick={()=>{
-              window.open(props.twitter,'_blank')
-          }} />
-        </Tooltip>
-      </Space>
-    </div>
+    <Space size="large">
+      <FacebookShareButton
+        url={`https://dev.perfectprof.com/storage/app/${props.imageurl}`}
+        quote={`Info about Professor ${props.name} DESCRIPTION: ${props.description}`}
+        hashtag="#professionaprofile"
+      >
+        <RiFacebookFill size="2.5rem" />
+      </FacebookShareButton>
+      <TwitterShareButton
+        url={`https://dev.perfectprof.com/storage/app/${props.imageurl.replaceAll(
+          " ",
+          "%"
+        )}`}
+        title={`Info about Professor ${props.name} 
+								DESCRIPTION: ${props.description.slice(0, 150) + "..."}
+								`}
+        hashtag="#professor"
+      >
+        <RiLinkedinFill size="2.5rem" />
+      </TwitterShareButton>
+      <LinkedinShareButton
+        url={`https://dev.perfectprof.com/storage/app/${props.imageurl}`}
+        title={`Info about Professor ${props.name}`}
+        summary={`DESCRIPTION: ${props.description}`}
+        quote={`https://dev.perfectprof.com/storage/app/${props.imageurl}`}
+      >
+        <RiTwitterFill size="2.5rem" />
+      </LinkedinShareButton>
+    </Space>
   );
 };
 

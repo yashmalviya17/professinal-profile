@@ -24,18 +24,7 @@ const SingleProfile = () => {
       .catch((err) => alert("Data not Found or Something went Wrong"));
   }, [slug]);
 
-  let title;
-  let profile_pic;
-  let description;
-
-  if (!loading) {
-    title = profile.title;
-    profile_pic = profile.professional.profile_pic;
-    description = profile.background;
-  }
-  const facebook = `https://facebook.com/sharer.php?u=${window.location.href}&title=${title}&longtext=${description}&media=${profile_pic}`;
-  const twitter = `https://twitter.com/share?url=${window.location.href}&text=${title}&longtext=${description}&media=${profile_pic}`;
-  const linkedin = `https://linkedin.com/sharearticle?url=${window.location.href}&title=${title}&longtext=${description}&media=${profile_pic}`;
+ 
   return (
     <>
       {loading ? (
@@ -80,9 +69,9 @@ const SingleProfile = () => {
                     {profile.title}
                   </p>
                   <SocialShare
-                    facebook={facebook}
-                    linkedin={linkedin}
-                    twitter={twitter}
+                    name={`${profile.professional.first_name} ${profile.professional.last_name} `}
+                    description={profile.background}
+                    imageurl ={`${imageurl}${profile.professional.profile_pic}`}
                   />
                 </div>
               </Col>
