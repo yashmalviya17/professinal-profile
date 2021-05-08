@@ -10,31 +10,29 @@ const SocialShare = (props) => {
   return (
     <Space size="large">
       <FacebookShareButton
-        url={`https://dev.perfectprof.com/storage/app/${props.imageurl}`}
-        quote={`Info about Professor ${props.name} DESCRIPTION: ${props.description}`}
+        url={`${props.imageurl}`}
+        quote={`My name is ${props.name} DESCRIPTION: ${props.description}`}
         hashtag="#professionaprofile"
       >
-        <RiFacebookFill size="2.5rem" />
+        <RiFacebookFill size="2.5rem" color="rgb(60, 85, 152)" />
       </FacebookShareButton>
       <TwitterShareButton
-        url={`https://dev.perfectprof.com/storage/app/${props.imageurl.replaceAll(
-          " ",
-          "%"
-        )}`}
-        title={`Info about Professor ${props.name} 
+        url={`${props.imageurl.replaceAll(" ", "%")}`}
+        title={`My name is ${props.name} 
 								DESCRIPTION: ${props.description.slice(0, 150) + "..."}
 								`}
-        hashtag="#professor"
+        hashtag="#professionaprofile"
+      
       >
-        <RiLinkedinFill size="2.5rem" />
+        <RiLinkedinFill size="2.5rem" color="rgb(0, 160, 220)" />
       </TwitterShareButton>
       <LinkedinShareButton
-        url={`https://dev.perfectprof.com/storage/app/${props.imageurl}`}
-        title={`Info about Professor ${props.name}`}
+        url={`${props.imageurl}`}
+        title={`My name is ${props.name}`}
         summary={`DESCRIPTION: ${props.description}`}
-        quote={`https://dev.perfectprof.com/storage/app/${props.imageurl}`}
+        source={`https://dev.perfectprof.com/storage/app/${props.imageurl}`}
       >
-        <RiTwitterFill size="2.5rem" />
+        <RiTwitterFill size="2.5rem" color="rgb(29, 161, 242)" />
       </LinkedinShareButton>
     </Space>
   );
