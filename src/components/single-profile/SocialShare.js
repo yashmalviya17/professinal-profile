@@ -30,7 +30,7 @@ const SocialShare = (props) => {
         url={`${props.imageurl}`}
         title={`My name is ${props.name}`}
         summary={`DESCRIPTION: ${props.description}`}
-        source={`https://dev.perfectprof.com/storage/app/${props.imageurl}`}
+        source={props.imageurl}
       >
         <RiTwitterFill size="2.5rem" color="rgb(29, 161, 242)" />
       </LinkedinShareButton>
